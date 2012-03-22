@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
-	<script src="http://code.jquery.com/jquery.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+	<script src="jquery-1.7.1.min.js"></script>
+	<script src="jquery.mobile-1.0.1.min.js"></script>
+	<link rel="stylesheet" href="jquery.mobile-1.0.1.min.css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">
 	#thecounts { text-align: center; }
