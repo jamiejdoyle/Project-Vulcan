@@ -34,20 +34,20 @@ This file was modified from the original file from Twitter's Bootstrap. This not
 	});
 	var currentpage = "home";
 	function openHome() {
-		if (currentpage == "faq") { $("#faq").fadeOut("slow"); setTimeout('$("#form").fadeIn("slow");', 800); setTimeout('$("#mehtitle").fadeIn("slow");', 800); $("#faqli").removeClass("active"); }
-		else if (currentpage == "contact") { $("#contact").fadeOut("slow"); setTimeout('$("#form").fadeIn("slow");', 800); setTimeout('$("#mehtitle").fadeIn("slow");', 800); $("#contactli").removeClass("active"); }
+		if (currentpage == "faq") { $("#faq").fadeOut("slow"); setTimeout('$("#form").fadeIn("slow");', 700); setTimeout('$("#mehtitle").fadeIn("slow");', 700); $("#faqli").removeClass("active"); }
+		else if (currentpage == "contact") { $("#contact").fadeOut("slow"); setTimeout('$("#form").fadeIn("slow");', 700); setTimeout('$("#mehtitle").fadeIn("slow");', 700); $("#contactli").removeClass("active"); }
 		currentpage = "home";
 		$("#homeli").addClass("active");
 	}
 	function openFAQ() {
-		if (currentpage == "home") { $("#form").fadeOut("slow"); $("#mehtitle").fadeOut("slow"); setTimeout('$("#faq").fadeIn("slow");', 800); $("#homeli").removeClass("active"); }
-		else if (currentpage == "contact") { $("#contact").fadeOut("slow"); setTimeout('$("#faq").fadeIn("slow");', 800); $("#contactli").removeClass("active"); }
+		if (currentpage == "home") { $("#form").fadeOut("slow"); $("#mehtitle").fadeOut("slow"); setTimeout('$("#faq").fadeIn("slow");', 700); $("#homeli").removeClass("active"); }
+		else if (currentpage == "contact") { $("#contact").fadeOut("slow"); setTimeout('$("#faq").fadeIn("slow");', 700); $("#contactli").removeClass("active"); }
 		currentpage = "faq";
 		$("#faqli").addClass("active");
 	}
 	function openContact() {
-		if (currentpage == "home") { $("#form").fadeOut("slow"); $("#mehtitle").fadeOut("slow"); setTimeout('$("#contact").fadeIn("slow");', 800); $("#homeli").removeClass("active"); }
-		else if (currentpage == "faq") { $("#faq").fadeOut("slow"); setTimeout('$("#contact").fadeIn("slow");', 800); $("#faqli").removeClass("active"); }
+		if (currentpage == "home") { $("#form").fadeOut("slow"); $("#mehtitle").fadeOut("slow"); setTimeout('$("#contact").fadeIn("slow");', 700); $("#homeli").removeClass("active"); }
+		else if (currentpage == "faq") { $("#faq").fadeOut("slow"); setTimeout('$("#contact").fadeIn("slow");', 700); $("#faqli").removeClass("active"); }
 		currentpage = "contact";
 		$("#contactli").addClass("active");
 	}
