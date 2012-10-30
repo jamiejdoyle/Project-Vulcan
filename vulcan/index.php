@@ -14,7 +14,7 @@ This file was modified from the original file from Twitter's Bootstrap. This not
     <meta name="description" content="">
     <meta name="author" content="">
     <script src="js/jquery.js"></script>
-    <!-- Le styles -->
+    <!-- styles -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <style>
       body {
@@ -22,7 +22,7 @@ This file was modified from the original file from Twitter's Bootstrap. This not
       }
     </style>
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -128,6 +128,7 @@ This file was modified from the original file from Twitter's Bootstrap. This not
 		
 		<footer>
 			<p>Created by <a href="http://mxtm.me">Max Tamer-Mahoney</a></p>
+			<p>This website is <a href="http://github.com/mxtm/Project-Vulcan">open source</a>.</p>
 			<p>Thanks to Twitter for the amazing <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>!</p>
     </div> <!-- /container -->
 
