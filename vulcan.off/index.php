@@ -1,1 +1,0 @@
-Library signups are currently closed. They are open from 6:00 PM - 7:25 AM on weekdays.

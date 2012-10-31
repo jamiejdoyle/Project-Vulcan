@@ -16,7 +16,7 @@
 			<h1>Library Signup</h1>
 		</div>
 		<div data-role="content">
-			<form data-ajax="false" id="signupform" action="dosignup.php" method="post" data-transition="slide" data-directions="">
+			<form data-ajax="false" id="signupform" action="../dosignup.php" method="post" data-transition="slide" data-directions="">
 				<label for="itstehname">Name:</label><input type="text" name="itstehname"><br>
 				<label for="homeroom">Homeroom:</label><input type="text" name="homeroom"><br>
 				<label for="period">Period:</label><select name="period"><option>R1</option><option>R2</option><option>R3</option><option>R4</option><option>R6</option><option>R7</option></select><br>

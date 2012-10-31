@@ -1,9 +1,24 @@
 <!--
-These signups are using the magical Bootstrap from Twitter and jQuery. The code was written by Max Tamer-Mahoney, originally for Boston Latin School.
+These signups were built using the magical Bootstrap from Twitter, and jQuery. The code was written by Max Tamer-Mahoney, originally for Boston Latin School.
 To complain about how bad my code is, please email me at max@mxtm.me
 
 This file was modified from the original file from Twitter's Bootstrap. This notice is here to comply with Bootstrap's Apache License.
 -->
+<?php
+ob_start();
+require("settings.inc.php");
+mysql_connect(mysqlip, mysqluser, mysqlpw) or die(mysql_error());
+mysql_select_db(mysqldb) or die(mysql_error());
+$query = "SELECT * FROM signupSettings";
+$result = mysql_query($query);
+while($row = mysql_fetch_assoc($result)) {
+	$disabled = $row['disabled'];
+}
+if ($disabled != 0) {
+	header("Location: disabled.php");
+}
+ob_end_flush();
+?>
 <!DOCTYPE html>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <html lang="en">

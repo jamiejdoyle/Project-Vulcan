@@ -11,6 +11,13 @@ $tehtable = $period . "Signups";
 $tehcounterfile = $period . "Count.txt";
 $tehcount = @file_get_contents($tehcounterfile);
 $hash = substr(md5(rand()), 0, 8);
+mysql_connect(mysqlip, mysqluser, mysqlpw) or die(mysql_error());
+mysql_select_db(mysqldb) or die(mysql_error());
+$disabledcheckquery = "SELECT * FROM signupSettings";
+$disabledcheckresult = mysql_query($disabledcheckquery);
+while($row = mysql_fetch_assoc($disabledcheckresult)) {
+	$disabled = $row['disabled'];
+}
 if (!$resp->is_valid)
 {
 die("Please retry the captcha.");
@@ -27,11 +34,12 @@ elseif ($tehcount >= maxsignupcount) {
 die("The capacity for this period has been reached.");
 }
 elseif (isset($_COOKIE['signupomnom'])) {
-die ("ERROR Already signed up today from this user account!");
+die("ERROR Already signed up today from this user account!");
+}
+elseif ($disabled != 0) {
+die("The library signups are currently disabled.");
 }
 else {
-mysql_connect(mysqlip, mysqluser, mysqlpw) or die(mysql_error());
-mysql_select_db(mysqldb) or die(mysql_error());
 mysql_real_escape_string($itstehname);
 mysql_real_escape_string($homeroom);
 mysql_query("INSERT INTO $tehtable 

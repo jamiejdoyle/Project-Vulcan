@@ -1,7 +1,20 @@
 <?php include("password_protect.php"); ?>
+<?php
+ob_start();
+require("../settings.inc.php");
+mysql_connect(mysqlip, mysqluser, mysqlpw) or die(mysql_error());
+mysql_select_db(mysqldb) or die(mysql_error());
+$query = "SELECT * FROM signupSettings";
+$result = mysql_query($query);
+while($row = mysql_fetch_assoc($result)) {
+	$disabled = $row['disabled'];
+}
+ob_end_flush();
+?>
 <html>
 <head>
 <title>Library Signup Control Panel</title>
+<form><input type="hidden" id="disabled" value="<?php echo $disabled; ?>"></form>
 </head>
 <body>
 <h2>View Signups</h2>
@@ -12,10 +25,20 @@
 <a href="viewsignups.php?period=R4">View signups for R4</a><br>
 <a href="viewsignups.php?period=R6">View signups for R6</a><br>
 <a href="viewsignups.php?period=R7">View signups for R7</a>
-<h2>Disable Signups</h2>
+<h2>Disable/Enable Signups</h2>
 <form action="disablesignups.php" method="POST">
-<input type="submit" value="Disable Signups">
+<input type="submit" id="disablebutton" value="Disable Signups">
 </form>
+<form action="enablesignups.php" method="POST">
+<input type="submit" id="enablebutton" value="Enable Signups">
+</form>
+<script type="text/javascript">
+var disabledvalue = document.getElementById('disabled').value;
+var disablebutton = document.getElementById('disablebutton');
+var enablebutton = document.getElementById('enablebutton');
+if (disabledvalue == 1) { disablebutton.disabled = true; }
+else if (disabledvalue == 0) { enablebutton.disabled = true; }
+</script>
 <h2>Clear Signups</h2>
 <form action="clearsignups.php" method="POST">
 <input type="submit" value="Clear Signups">

@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 14, 2012 at 03:28 AM
--- Server version: 5.1.58
--- PHP Version: 5.3.6-13ubuntu3.5
+-- Generation Time: Oct 31, 2012 at 02:18 AM
+-- Server version: 5.1.63
+-- PHP Version: 5.3.6-13ubuntu3.8
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `demolib`
+-- Database: `foolibsignups`
 --
 
 -- --------------------------------------------------------
@@ -120,6 +120,23 @@ CREATE TABLE IF NOT EXISTS `R7Signups` (
   `hr` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `signupSettings`
+--
+
+CREATE TABLE IF NOT EXISTS `signupSettings` (
+  `disabled` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `signupSettings`
+--
+
+INSERT INTO `signupSettings` (`disabled`) VALUES
+(0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
