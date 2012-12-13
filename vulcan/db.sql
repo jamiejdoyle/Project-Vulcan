@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 31, 2012 at 02:18 AM
+-- Generation Time: Nov 01, 2012 at 03:47 AM
 -- Server version: 5.1.63
 -- PHP Version: 5.3.6-13ubuntu3.8
 
@@ -120,6 +120,29 @@ CREATE TABLE IF NOT EXISTS `R7Signups` (
   `hr` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `signupCounts`
+--
+
+CREATE TABLE IF NOT EXISTS `signupCounts` (
+  `period` varchar(2) NOT NULL,
+  `count` int(2) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `signupCounts`
+--
+
+INSERT INTO `signupCounts` (`period`, `count`) VALUES
+('R1', 0),
+('R2', 0),
+('R3', 0),
+('R4', 0),
+('R6', 0),
+('R7', 0);
 
 -- --------------------------------------------------------
 

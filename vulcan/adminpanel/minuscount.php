@@ -1,11 +1,14 @@
 <?php include("password_protect.php"); ?>
 <?php
 require("../settings.inc.php");
+mysql_connect(mysqlip, mysqluser, mysqlpw) or die(mysql_error());
+mysql_select_db(mysqldb) or die(mysql_error());
 $period = $_POST['periodfordecrease'];
 $numforremoval = $_POST['numforremoval'];
-$count = file_get_contents("../" . $period . "Count.txt");
+$count = "$" . $period . "Count";
 $newcount = $count - $numforremoval;
-file_put_contents("../" . $period . "Count.txt", $newcount);
+$updatequery = "UPDATE signupCounts SET count = '$newcount' WHERE period = '$period'";
+mysql_query($updatequery) or die(mysql_error());
 echo "Count decreased.";
 ?>
 <br><a href="index.php">Back to the Admin Panel</a>

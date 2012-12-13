@@ -1,3 +1,18 @@
+<?php
+ob_start();
+require("../settings.inc.php");
+mysql_connect(mysqlip, mysqluser, mysqlpw) or die(mysql_error());
+mysql_select_db(mysqldb) or die(mysql_error());
+$query = "SELECT * FROM signupSettings";
+$result = mysql_query($query);
+while($row = mysql_fetch_assoc($result)) {
+	$disabled = $row['disabled'];
+}
+if ($disabled != 0) {
+	header("Location: ../disabled.php");
+}
+ob_end_flush();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,12 +43,14 @@
 				?><br>
 				<div id="thecounts">
 				<?php
-				$R1Count = @file_get_contents("../R1Count.txt");
-				$R2Count = @file_get_contents("../R2Count.txt");
-				$R3Count = @file_get_contents("../R3Count.txt");
-				$R4Count = @file_get_contents("../R4Count.txt");
-				$R6Count = @file_get_contents("../R6Count.txt");
-				$R7Count = @file_get_contents("../R7Count.txt");
+				$countsresult = mysql_query("SELECT * FROM signupCounts") or die(mysql_error());
+				$row = mysql_fetch_array($countsresult);
+				$R1Count = $row['count'];
+				$R2Count = $row['count'];
+				$R3Count = $row['count'];
+				$R4Count = $row['count'];
+				$R6Count = $row['count'];
+				$R7Count = $row['count'];
 				echo "Current signup counts per period:<br>";
 				echo "R1: " . $R1Count . "<br>";
 				echo "R2: " . $R2Count . "<br>";
