@@ -1,3 +1,4 @@
+<?php include("password_protect.php"); ?>
 <?php
 require("../settings.inc.php");
 mysql_connect(mysqlip, mysqluser, mysqlpw) or die(mysql_error());

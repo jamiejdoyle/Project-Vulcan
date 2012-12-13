@@ -1,4 +1,19 @@
 <!DOCTYPE html>
+<?php
+ob_start();
+require("../settings.inc.php");
+mysql_connect(mysqlip, mysqluser, mysqlpw) or die(mysql_error());
+mysql_select_db(mysqldb) or die(mysql_error());
+$query = "SELECT * FROM signupSettings";
+$result = mysql_query($query);
+while($row = mysql_fetch_assoc($result)) {
+	$disabled = $row['disabled'];
+}
+if ($disabled != 0) {
+	header("Location: ../disabled.php");
+}
+ob_end_flush();
+?>
 <html>
 <head>
 	<script src="jquery-1.7.1.min.js"></script>
