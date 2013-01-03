@@ -52,5 +52,3 @@ while($row = mysql_fetch_array($result)){
     echo "Name: " . $row['name'] . " HR: " . $row['hr'] . "<br>";
 }
 ?>
-
-

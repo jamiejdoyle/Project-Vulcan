@@ -96,7 +96,7 @@ ob_end_flush();
     </div>
 
     <div class="container">
-		<div id="mehtitle"><h1>Online Library Signup</h1></div>
+		<div id="mehtitle"><h1>Library Signup</h1></div>
       	<div id="form">
 		<form action="dosignup.php" method="POST">
 		Name: <input type="text" name="itstehname"><br>
@@ -130,7 +130,7 @@ ob_end_flush();
 		</div>
 		
 		<div id="faq">
-			This will be added... soon. Sorry for the delays!
+			This will be added... at some unknown time. Sorry! For now, just use the methods of contact on the <a href="javascript:openContact();">"Contact" page</a> to ask questions.
 		</div>
 		<div id="contact">
 			For assistance with signing up, or anything else at all, contact me by:<br>

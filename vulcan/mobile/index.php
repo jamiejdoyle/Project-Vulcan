@@ -37,7 +37,7 @@ ob_end_flush();
 				<label for="period">Period:</label><select name="period"><option>R1</option><option>R2</option><option>R3</option><option>R4</option><option>R6</option><option>R7</option></select><br>
 				<br>
 				<?php
-				require_once('recaptchalib.php');
+				require_once('../recaptchalib.php');
 				$publickey = "6LfITskSAAAAALX5vdvLOQw5CFuEEhhrdftxlF5I";
 				echo recaptcha_get_html($publickey);
 				?><br>

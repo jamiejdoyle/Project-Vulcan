@@ -36,4 +36,4 @@ mysql_query("TRUNCATE TABLE correctHashes");
 echo "Signups cleared.";
 ?>
 <br>
-<a href="index.php">Back to the Control Panel</a>
+<a href="index.php">Return to the Control Panel</a>

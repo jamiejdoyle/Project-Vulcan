@@ -7,11 +7,11 @@ $enteredHash = $_POST['hash'];
 $checkHash = mysql_query("SELECT hash from correctHashes WHERE hash = '$enteredHash'");
 if ( mysql_num_rows($checkHash) > 0 )
 {
-	echo 'The ID is valid!';
+	echo 'The hash is valid!';
 }
 else {
-	echo "The ID is not valid.";
+	echo "The hash is not valid.";
 }
 ?>
 <br>
-<a href="index.php">Return to the control panel</a>
+<a href="index.php">Return to the Control Panel</a>
