@@ -24,7 +24,7 @@ ob_end_flush();
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Online Library Signup</title>
+    <title>Library Signup</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -83,7 +83,7 @@ ob_end_flush();
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="javascript:openHome();">Online Library Signup</a>
+          <a class="brand" href="javascript:openHome();">Library Signup</a>
           <div class="nav-collapse">
             <ul class="nav">
               <li id="homeli" class="active"><a href="javascript:openHome();">Home</a></li>
