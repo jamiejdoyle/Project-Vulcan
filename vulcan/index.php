@@ -49,20 +49,48 @@ ob_end_flush();
 	});
 	var currentpage = "home";
 	function openHome() {
-		if (currentpage == "faq") { $("#faq").fadeOut("slow"); setTimeout('$("#form").fadeIn("slow");', 450); setTimeout('$("#mehtitle").fadeIn("slow");', 450); $("#faqli").removeClass("active"); }
-		else if (currentpage == "contact") { $("#contact").fadeOut("slow"); setTimeout('$("#form").fadeIn("slow");', 450); setTimeout('$("#mehtitle").fadeIn("slow");', 450); $("#contactli").removeClass("active"); }
+		if (currentpage == "faq") {
+			$("#faq").hide();
+			$("#form").show();
+			$("#mehtitle").show();
+			$("#faqli").removeClass("active");
+		}
+		else if (currentpage == "contact") {
+			$("#contact").hide();
+			$("#form").show();
+			$("#mehtitle").show();
+			$("#contactli").removeClass("active");
+		}
 		currentpage = "home";
 		$("#homeli").addClass("active");
 	}
 	function openFAQ() {
-		if (currentpage == "home") { $("#form").fadeOut("slow"); $("#mehtitle").fadeOut("slow"); setTimeout('$("#faq").fadeIn("slow");', 450); $("#homeli").removeClass("active"); }
-		else if (currentpage == "contact") { $("#contact").fadeOut("slow"); setTimeout('$("#faq").fadeIn("slow");', 450); $("#contactli").removeClass("active"); }
+		if (currentpage == "home") {
+			$("#form").hide();
+			$("#mehtitle").hide();
+			$("#faq").show();
+			$("#homeli").removeClass("active");
+		}
+		else if (currentpage == "contact") {
+			$("#contact").hide();
+			$("#faq").show("slow");
+			$("#contactli").removeClass("active");
+		}
 		currentpage = "faq";
 		$("#faqli").addClass("active");
 	}
 	function openContact() {
-		if (currentpage == "home") { $("#form").fadeOut("slow"); $("#mehtitle").fadeOut("slow"); setTimeout('$("#contact").fadeIn("slow");', 450); $("#homeli").removeClass("active"); }
-		else if (currentpage == "faq") { $("#faq").fadeOut("slow"); setTimeout('$("#contact").fadeIn("slow");', 450); $("#faqli").removeClass("active"); }
+		if (currentpage == "home") {
+			$("#form").hide();
+			$("#mehtitle").hide();
+			$("#contact").show();
+			$("#homeli").removeClass("active");
+		}
+		else if (currentpage == "faq") {
+			$("#faq").hide();
+			$("#contact").show();
+			$("#faqli").removeClass("active");
+		}
 		currentpage = "contact";
 		$("#contactli").addClass("active");
 	}
