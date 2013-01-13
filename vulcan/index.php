@@ -48,51 +48,17 @@ ob_end_flush();
 		$("#contact").hide();
 	});
 	var currentpage = "home";
-	function openHome() {
-		if (currentpage == "faq") {
-			$("#faq").hide();
-			$("#form").show();
-			$("#mehtitle").show();
-			$("#faqli").removeClass("active");
+	function openPage(page) {
+		if (page == currentpage) {
+			return;
 		}
-		else if (currentpage == "contact") {
-			$("#contact").hide();
-			$("#form").show();
-			$("#mehtitle").show();
-			$("#contactli").removeClass("active");
+		else {
+			$("#" + currentpage).hide();
+			$("#" + page).show();
+			$("#" + currentpage + "li").removeClass("active");
+			currentpage = page;
+			$("#" + page + "li").addClass("active");
 		}
-		currentpage = "home";
-		$("#homeli").addClass("active");
-	}
-	function openFAQ() {
-		if (currentpage == "home") {
-			$("#form").hide();
-			$("#mehtitle").hide();
-			$("#faq").show();
-			$("#homeli").removeClass("active");
-		}
-		else if (currentpage == "contact") {
-			$("#contact").hide();
-			$("#faq").show();
-			$("#contactli").removeClass("active");
-		}
-		currentpage = "faq";
-		$("#faqli").addClass("active");
-	}
-	function openContact() {
-		if (currentpage == "home") {
-			$("#form").hide();
-			$("#mehtitle").hide();
-			$("#contact").show();
-			$("#homeli").removeClass("active");
-		}
-		else if (currentpage == "faq") {
-			$("#faq").hide();
-			$("#contact").show();
-			$("#faqli").removeClass("active");
-		}
-		currentpage = "contact";
-		$("#contactli").addClass("active");
 	}
 	if (screen.width <= 699) {
 		document.location = "mobile";
@@ -111,12 +77,12 @@ ob_end_flush();
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="javascript:openHome();">Library Signup</a>
+          <a class="brand" href="javascript:openPage('home');">Library Signup</a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li id="homeli" class="active"><a href="javascript:openHome();">Home</a></li>
-              <li id="faqli"><a href="javascript:openFAQ();">FAQ</a></li>
-              <li id="contactli"><a href="javascript:openContact();">Contact</a></li>
+              <li id="homeli" class="active"><a href="javascript:openPage('home');">Home</a></li>
+              <li id="faqli"><a href="javascript:openPage('faq');">FAQ</a></li>
+              <li id="contactli"><a href="javascript:openPage('contact');">Contact</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -124,6 +90,7 @@ ob_end_flush();
     </div>
 
     <div class="container">
+    	<div id="home">
 		<div id="mehtitle"><h1>Library Signup</h1></div>
       	<div id="form">
 		<form action="dosignup.php" method="POST">
@@ -156,9 +123,10 @@ ob_end_flush();
 		<input id="submit" type="submit" class="btn btn-primary btn-medium" value="Signup!">
 		</form>
 		</div>
+		</div>
 		
 		<div id="faq">
-			This will be added... at some unknown time. Sorry! For now, just use the methods of contact on the <a href="javascript:openContact();">"Contact" page</a> to ask questions.
+			This will be added... at some unknown time. Sorry! For now, just use the methods of contact on the <a href="javascript:openPage('contact');">"Contact" page</a> to ask questions.
 		</div>
 		<div id="contact">
 			For assistance with signing up, or anything else at all, contact me by:<br>
