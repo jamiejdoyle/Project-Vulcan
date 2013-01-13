@@ -73,7 +73,7 @@ ob_end_flush();
 		}
 		else if (currentpage == "contact") {
 			$("#contact").hide();
-			$("#faq").show("slow");
+			$("#faq").show();
 			$("#contactli").removeClass("active");
 		}
 		currentpage = "faq";
